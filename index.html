@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -778,6 +778,18 @@
       #top-bar{padding:8px 10px}
       .topbar-title{font-size:13px}
       #messages{padding:10px 10px}
+    }
+
+    /* MOBILE LIGHT MODE OVERRIDES */
+    @media(max-width:768px){
+      body.light-mode #chat-panel::before{ background:url('krishna_flute_day.png') center top / cover no-repeat; }
+      body.light-mode #chat-panel::after{ background:linear-gradient(180deg,rgba(253,246,227,0.40) 0%,rgba(243,235,211,0.58) 40%,rgba(243,235,211,0.80) 100%); }
+      body.light-mode #top-bar{background:rgba(243,235,211,0.72);border-bottom:1px solid rgba(212,168,67,0.25)}
+      body.light-mode #input-area{background:rgba(243,235,211,0.78);border-top:1px solid rgba(212,168,67,0.2)}
+      body.light-mode #user-input{background:rgba(255,255,255,0.5)}
+      body.light-mode .msg-guru .bubble{background:linear-gradient(145deg,rgba(251,245,230,0.90),rgba(242,234,210,0.87))}
+      body.light-mode .msg-user .bubble{background:rgba(232,137,58,0.15)}
+      body.light-mode .starter{background:rgba(255,255,255,0.35)}
     }
   </style>
 </head>
@@ -1560,4 +1572,5 @@ window.addEventListener('load', ()=>{
 <audio id="bg-music" src="flute.mp3" loop preload="none"></audio>
 </body>
 </html>
+
 
