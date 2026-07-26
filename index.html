@@ -7,7 +7,7 @@
   <meta name="description" content="Speak with Krishna. Ask any question and receive personal guidance from the Bhagavad Gita — as if Lord Krishna himself is answering you."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet"/>
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -266,15 +266,30 @@
       animation:fadeUp 0.6s ease;
     }
     .welcome-om{
-      font-family:'Cormorant Garamond',serif;
-      font-size:38px;font-weight:600;
-      margin-bottom:14px;
-      letter-spacing:0.18em;
-      background:linear-gradient(135deg,var(--saffron),var(--gold),var(--saffron2));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-      filter:drop-shadow(0 0 16px rgba(212,168,67,0.6));
+      font-family:'Baloo 2',sans-serif;
+      font-size:42px;font-weight:800;
+      margin-bottom:16px;
+      letter-spacing:0.12em;
+      color:var(--gold);
+      text-shadow:0 0 18px rgba(212,168,67,0.7), 0 0 40px rgba(232,137,58,0.3);
       animation:om-breathe 3.5s ease-in-out infinite;
+      display:flex;flex-direction:column;align-items:center;gap:10px;
+      -webkit-text-fill-color:var(--gold);
+    }
+    .radhe-text{
+      position:relative;
       display:inline-block;
+      line-height:1.1;
+    }
+    /* Decorative base line — like the wooden stand in the image */
+    .radhe-text::after{
+      content:'';
+      display:block;
+      margin-top:2px;
+      height:3px;
+      border-radius:3px;
+      background:linear-gradient(90deg,transparent,var(--gold),var(--saffron),var(--gold),transparent);
+      box-shadow:0 0 8px rgba(212,168,67,0.5);
     }
     @keyframes om-breathe{
       0%,100%{transform:scale(0.98);filter:drop-shadow(0 0 14px rgba(212,168,67,0.4));opacity:0.88}
@@ -849,7 +864,32 @@
 
       <!-- WELCOME -->
       <div id="welcome">
-        <div class="welcome-om">राधे राधे</div>
+        <div class="welcome-om">
+          <span class="radhe-text">राधे राधे</span>
+          <!-- Bansuri (flute) SVG -->
+          <svg width="110" height="22" viewBox="0 0 110 22" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.85">
+            <!-- Flute body -->
+            <rect x="2" y="9" width="106" height="6" rx="3" fill="url(#fluteGrad)"/>
+            <!-- Mouthpiece (wider left end) -->
+            <ellipse cx="5" cy="12" rx="5" ry="4" fill="#e8893a"/>
+            <!-- Finger holes -->
+            <circle cx="30" cy="12" r="2.5" fill="#07040e" opacity="0.7"/>
+            <circle cx="43" cy="12" r="2.5" fill="#07040e" opacity="0.7"/>
+            <circle cx="56" cy="12" r="2.5" fill="#07040e" opacity="0.7"/>
+            <circle cx="69" cy="12" r="2.5" fill="#07040e" opacity="0.7"/>
+            <circle cx="82" cy="12" r="2.5" fill="#07040e" opacity="0.7"/>
+            <circle cx="95" cy="12" r="2.5" fill="#07040e" opacity="0.7"/>
+            <!-- Shine highlight -->
+            <rect x="8" y="10" width="95" height="2" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <defs>
+              <linearGradient id="fluteGrad" x1="0" y1="0" x2="110" y2="0">
+                <stop offset="0%" stop-color="#e8893a"/>
+                <stop offset="40%" stop-color="#d4a843"/>
+                <stop offset="100%" stop-color="#c8901a"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
         <h1 class="welcome-h">What troubles your heart?</h1>
         <p class="welcome-p">Speak freely. Krishna listens with infinite compassion. Every question about life, duty, love, and purpose — the Gita has the answer.</p>
         <div class="starters">
