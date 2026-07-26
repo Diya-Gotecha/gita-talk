@@ -802,14 +802,68 @@
 
     /* MOBILE LIGHT MODE OVERRIDES */
     @media(max-width:768px){
-      body.light-mode #chat-panel::before{ background:url('krishna_flute_day.png') center top / cover no-repeat; }
-      body.light-mode #chat-panel::after{ background:linear-gradient(180deg,rgba(253,246,227,0.40) 0%,rgba(243,235,211,0.58) 40%,rgba(243,235,211,0.80) 100%); }
-      body.light-mode #top-bar{background:rgba(243,235,211,0.72);border-bottom:1px solid rgba(212,168,67,0.25)}
-      body.light-mode #input-area{background:rgba(243,235,211,0.78);border-top:1px solid rgba(212,168,67,0.2)}
-      body.light-mode #user-input{background:rgba(255,255,255,0.5)}
-      body.light-mode .msg-guru .bubble{background:linear-gradient(145deg,rgba(251,245,230,0.90),rgba(242,234,210,0.87))}
-      body.light-mode .msg-user .bubble{background:rgba(232,137,58,0.15)}
-      body.light-mode .starter{background:rgba(255,255,255,0.35)}
+      /* Daytime Krishna background */
+      body.light-mode #chat-panel::before{
+        background:url('krishna_flute_day.png') center top / cover no-repeat;
+      }
+      /* Stronger warm overlay — enough to keep text readable over bright image */
+      body.light-mode #chat-panel::after{
+        background:linear-gradient(
+          180deg,
+          rgba(253,240,200,0.50) 0%,
+          rgba(243,228,185,0.65) 45%,
+          rgba(233,215,165,0.82) 100%
+        );
+      }
+      /* Top bar — warm parchment glass */
+      body.light-mode #top-bar{
+        background:rgba(243,228,185,0.82);
+        border-bottom:1px solid rgba(180,120,40,0.3);
+      }
+      /* Input area — warm parchment glass */
+      body.light-mode #input-area{
+        background:rgba(243,228,185,0.85);
+        border-top:1px solid rgba(180,120,40,0.25);
+      }
+      body.light-mode #user-input{background:rgba(255,255,255,0.6)}
+
+      /* ── Radhe Radhe: deep maroon/saffron so it pops on bright bg ── */
+      body.light-mode .welcome-om{
+        color:#7a2800;
+        -webkit-text-fill-color:#7a2800;
+        text-shadow:
+          0 1px 0 rgba(255,220,150,0.8),
+          0 0 12px rgba(200,80,0,0.3);
+      }
+      body.light-mode .radhe-text::after{
+        background:linear-gradient(90deg,transparent,#c06820,#e8893a,#c06820,transparent);
+      }
+
+      /* ── Welcome heading & paragraph: dark for readability ── */
+      body.light-mode .welcome-h{
+        -webkit-text-fill-color:#4a1e00;
+        background:none;
+        color:#4a1e00;
+        text-shadow:0 1px 4px rgba(255,220,150,0.6);
+      }
+      body.light-mode .welcome-p{color:#3a2008}
+
+      /* ── Starter cards: solid warm white with strong border ── */
+      body.light-mode .starter{
+        background:rgba(255,248,225,0.80);
+        border:1px solid rgba(180,120,40,0.35);
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+      }
+      body.light-mode .s-text{color:#3a2008}
+
+      /* ── Message bubbles ── */
+      body.light-mode .msg-guru .bubble{
+        background:linear-gradient(145deg,rgba(251,244,224,0.92),rgba(242,232,205,0.90));
+      }
+      body.light-mode .msg-user .bubble{
+        background:rgba(232,137,58,0.18);
+      }
     }
   </style>
 </head>
